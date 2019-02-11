@@ -1,3 +1,12 @@
+import ui
+
+ARTIST = 0
+TITLE = 1
+YEAR = 2
+GENRE = 3
+DURATION = 4
+
+
 def get_albums_by_genre(albums, genre):
     """
     Get albums by genre
@@ -8,6 +17,8 @@ def get_albums_by_genre(albums, genre):
     :returns: all albums of given genre
     :rtype: list
     """
+    result = [album for album in albums if album[GENRE] == genre]
+    ui.print_albums_list(result)
 
 
 def get_longest_album(albums):

@@ -1,3 +1,22 @@
+GENRE = 3
+
+
+def get_input(message):
+    user_input = input(message)
+    return user_input
+
+
+def genre(message, albums):
+    while True:
+        try:
+            genre = input(message)
+            if genre not in [album[GENRE] for album in albums]:
+                raise ValueError
+        except(ValueError):
+            error_message = "There isn't such genre"
+            display_error_message(error_message)
+        else:
+            return genre
 
 
 def print_album_info(album):
@@ -25,6 +44,10 @@ def print_command_result(message):
 
 def display_messsge(message):
     print(message)
+
+
+def display_error_message(message):
+    print(display_colored_text(ORANGE, (f'ERROR: {message}')))
 
 
 #  coloring function

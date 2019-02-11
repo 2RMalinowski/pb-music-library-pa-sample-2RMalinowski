@@ -18,7 +18,8 @@ def choose_options_menu(albums):
     if user_choice == '0':
         sys.exit()
     elif user_choice == ALBUMS_BY_GENRE:
-        music_reports.get_albums_by_genre(albums)
+        genre = ui.genre('Enter genre of music: ', albums)
+        music_reports.get_albums_by_genre(albums, genre)
     elif user_choice == LONGEST_ALBUM:
         music_reports.get_longest_album(albums)
     elif user_choice == TOTAL_ALBUM_LENGTH:
