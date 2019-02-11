@@ -46,6 +46,10 @@ def display_messsge(message):
     print(message)
 
 
+def print_list(result):
+    print(result)
+
+
 def display_error_message(message):
     print(display_colored_text(ORANGE, (f'ERROR: {message}')))
 

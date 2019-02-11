@@ -5,6 +5,8 @@ TITLE = 1
 YEAR = 2
 GENRE = 3
 DURATION = 4
+SEC_IN_MIN = 60
+RESULT_COLOR = ui.GREEN
 
 
 def get_albums_by_genre(albums, genre):
@@ -21,6 +23,16 @@ def get_albums_by_genre(albums, genre):
     ui.print_albums_list(result)
 
 
+def convert_time_to_sec(time):
+    int_min_sec = [int(element) for element in time.split(':')]
+    return int_min_sec[0] * SEC_IN_MIN + int_min_sec[1]  # 0, 1 indicate indexes of minutes/seconds
+
+
+def make_duration_list(albums):
+    duration_list = [convert_time_to_sec(album[DURATION]) for album in albums]
+    return duration_list
+
+
 def get_longest_album(albums):
     """
     Get album with biggest value in length field.
@@ -30,6 +42,11 @@ def get_longest_album(albums):
     :returns: longest album
     :rtype: list
     """
+    duration_list = make_duration_list(albums)
+    longest_duration = max(duration_list)
+    for album in albums:
+        if longest_duration == convert_time_to_sec(album[DURATION]):
+            ui.print_list(ui.display_colored_text(RESULT_COLOR, ' '.join(album)))
 
 
 def get_total_albums_length(albums):
