@@ -2,6 +2,7 @@
 The main program should use functions from music_reports and display modules
 """
 
+
 def main():
     """
     Calls all interaction between user and program, handles program menu

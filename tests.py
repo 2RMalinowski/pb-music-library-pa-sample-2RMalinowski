@@ -107,5 +107,6 @@ class BasicTestCase(unittest.TestCase):
 
         self.assertAlmostEqual(total_length, expected, 2)
 
+
 if __name__ == '__main__':
     unittest.main()
