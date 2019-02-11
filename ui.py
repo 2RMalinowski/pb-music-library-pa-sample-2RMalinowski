@@ -1,3 +1,5 @@
+
+
 def print_album_info(album):
     artist_index = 0
     name_index = 1
@@ -18,5 +20,22 @@ def print_program_menu(menu_commands):
 
 def print_command_result(message):
     vertical_spacing = 2
-
     print(vertical_spacing * '\n' + message)
+
+
+def display_messsge(message):
+    print(message)
+
+
+#  coloring function
+BLUE = '34m'
+CYAN = '96m'
+GREEN = '92m'
+ORANGE = '33m'
+RED = '91m'
+YELLOW = '93m'
+
+
+def display_colored_text(color, message):
+    colored_text = (f"\033[{color}{message}\033[00m")
+    return colored_text
