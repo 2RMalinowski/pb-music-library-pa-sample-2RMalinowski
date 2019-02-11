@@ -6,7 +6,7 @@ YEAR = 2
 GENRE = 3
 DURATION = 4
 SEC_IN_MIN = 60
-RESULT_COLOR = ui.GREEN
+RESULT_COLOR = ui.CYAN
 
 
 def get_albums_by_genre(albums, genre):
@@ -57,3 +57,6 @@ def get_total_albums_length(albums):
     :returns: total albums' length in minutes
     :rtype: float
     """
+    total_duration_sec = sum(make_duration_list(albums))
+    time_in_min = total_duration_sec / SEC_IN_MIN
+    ui.print_list(ui.display_colored_text(RESULT_COLOR, round(time_in_min, 2)))
