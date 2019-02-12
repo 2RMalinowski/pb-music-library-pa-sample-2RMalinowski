@@ -13,7 +13,7 @@ ALBUMS_BY_GENRE = '1'
 LONGEST_ALBUM = '2'
 TOTAL_ALBUM_LENGTH = '3'
 SORT_BY_DURATION = '4'
-DELETE_ALBUM = '5'
+DELETE_BY_GENRE = '5'
 
 
 def choose_options_menu(albums):
@@ -29,8 +29,9 @@ def choose_options_menu(albums):
         music_reports.get_total_albums_length(albums)
     elif user_choice == SORT_BY_DURATION:
         music_reports.sort_by_duration(albums)
-    elif user_choice == DELETE_ALBUM:
-        modify.delete_album_from(albums)
+    elif user_choice == DELETE_BY_GENRE:
+        music_reports.get_genre_list(albums)
+        # modify.delete_album_from(albums)
     else:
         ui.display_messsge(ui.display_colored_text(MESSAGE_COLOR, "There isn't such option"))
 
@@ -41,7 +42,7 @@ def display_menu():
                      'Longest album',
                      'Total album length',
                      'Sort by duration',
-                     'Delete album']
+                     'Delete by genre']
     ui.print_program_menu(menu_commands)
 
 

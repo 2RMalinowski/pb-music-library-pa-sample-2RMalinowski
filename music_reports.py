@@ -63,5 +63,10 @@ def get_total_albums_length(albums):
 
 
 def sort_by_duration(albums):
-    albums.sort(key=lambda album: album[DURATION], reverse=True)
+    albums.sort(key=lambda album: album[DURATION])
     ui.print_albums_list(albums)
+
+
+def get_genre_list(albums):
+    list_of_genre = list(set([album[GENRE] for album in albums]))
+    ui.print_list_element_in_line(list_of_genre)

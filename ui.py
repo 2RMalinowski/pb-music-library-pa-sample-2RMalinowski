@@ -50,6 +50,11 @@ def print_list(result):
     print(result)
 
 
+def print_list_element_in_line(result):
+    for element in result:
+        print(element)
+
+
 def display_error_message(message):
     print(display_colored_text(ORANGE, (f'ERROR: {message}')))
 
