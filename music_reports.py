@@ -23,8 +23,8 @@ def get_albums_by_genre(albums, genre):
     ui.print_albums_list(result)
 
 
-def convert_time_to_sec(time):
-    int_min_sec = [int(element) for element in time.split(':')]
+def convert_time_to_sec(duration):
+    int_min_sec = [int(element) for element in duration.split(':')]
     return int_min_sec[0] * SEC_IN_MIN + int_min_sec[1]  # 0, 1 indicate indexes of minutes/seconds
 
 
@@ -60,3 +60,8 @@ def get_total_albums_length(albums):
     total_duration_sec = sum(make_duration_list(albums))
     time_in_min = total_duration_sec / SEC_IN_MIN
     ui.print_list(ui.display_colored_text(RESULT_COLOR, round(time_in_min, 2)))
+
+
+def sort_by_duration(albums):
+    albums.sort(key=lambda album: album[DURATION], reverse=True)
+    ui.print_albums_list(albums)

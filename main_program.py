@@ -12,7 +12,8 @@ MESSAGE_COLOR = ui.ORANGE
 ALBUMS_BY_GENRE = '1'
 LONGEST_ALBUM = '2'
 TOTAL_ALBUM_LENGTH = '3'
-DELETE_ALBUM = '4'
+SORT_BY_DURATION = '4'
+DELETE_ALBUM = '5'
 
 
 def choose_options_menu(albums):
@@ -26,6 +27,8 @@ def choose_options_menu(albums):
         music_reports.get_longest_album(albums)
     elif user_choice == TOTAL_ALBUM_LENGTH:
         music_reports.get_total_albums_length(albums)
+    elif user_choice == SORT_BY_DURATION:
+        music_reports.sort_by_duration(albums)
     elif user_choice == DELETE_ALBUM:
         modify.delete_album_from(albums)
     else:
@@ -37,6 +40,7 @@ def display_menu():
                      'Albums by genre',
                      'Longest album',
                      'Total album length',
+                     'Sort by duration',
                      'Delete album']
     ui.print_program_menu(menu_commands)
 
